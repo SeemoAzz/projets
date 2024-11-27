@@ -16,23 +16,23 @@
 2. **Calcul de la similarité locale**  
    **Objectif** : Donner plus de poids aux exemples perturbés qui sont proches de l'entrée d'origine.  
    **Méthode** :  
-   LIME utilise une fonction de similarité (par exemple, une mesure basée sur la distance cosinus) pour attribuer un poids à chaque exemple perturbé en fonction de sa proximité avec l'exemple original.
+   - LIME utilise une fonction de similarité (par exemple, une mesure basée sur la distance cosinus) pour attribuer un poids à chaque exemple perturbé en fonction de sa proximité avec l'exemple original.
 
 3. **Construction d'un modèle interprétable**  
    **Objectif** : Approcher le comportement du modèle complexe sur les données perturbées à l’aide d’un modèle simple.  
    **Méthode** :  
-   LIME entraîne un modèle interprétable (comme une régression linéaire ou un arbre de décision) sur les exemples perturbés pondérés par leur similarité.  
-   Ce modèle simple est ajusté uniquement pour expliquer l’entrée analysée (localement).
+   - LIME entraîne un modèle interprétable (comme une régression linéaire ou un arbre de décision) sur les exemples perturbés pondérés par leur similarité.  
+   - Ce modèle simple est ajusté uniquement pour expliquer l’entrée analysée (localement).
 
 4. **Extraction des contributions des caractéristiques**  
    **Objectif** : Identifier les caractéristiques (par exemple, les mots) ayant le plus d’influence sur la prédiction.  
    **Méthode** :  
-   Les coefficients du modèle interprétable indiquent l’impact de chaque caractéristique (positif ou négatif) sur la probabilité de la classe prédite.
+   - Les coefficients du modèle interprétable indiquent l’impact de chaque caractéristique (positif ou négatif) sur la probabilité de la classe prédite.
 
 5. **Visualisation des résultats**  
    **Objectif** : Présenter les résultats sous une forme compréhensible pour l’utilisateur.  
    **Méthode** :  
-   LIME génère une liste ou un graphique montrant les caractéristiques les plus influentes et leur contribution à la prédiction.
+   - LIME génère une liste ou un graphique montrant les caractéristiques les plus influentes et leur contribution à la prédiction.
 
 
 ### Illustration
@@ -79,21 +79,3 @@ Ce projet utilise un modèle de **régression logistique** pour classifier des t
    - LIME perturbe les textes pour analyser l'impact des mots sur les prédictions.
    - Fournit une explication textuelle et graphique des mots influents.
 
----
-
-## Installation et exécution
-
-### Prérequis
-- **Python 3.7+**
-- Bibliothèques Python nécessaires :
-  - `numpy`
-  - `matplotlib`
-  - `scikit-learn`
-  - `lime`
-
-### Installation
-Clonez le dépôt et installez les dépendances :
-```bash
-git clone https://github.com/username/repository.git
-cd repository
-pip install -r requirements.txt
